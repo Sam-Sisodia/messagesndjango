@@ -1,0 +1,95 @@
+<html><head>
+    <title> HOme</title>
+
+    <style>
+
+        .success{
+            color : green;
+            
+        }
+        .info{
+            color:blue;
+        }
+    </style>
+    
+   </head>
+
+    <body>
+    <center>
+    <form action = " "  method = "POST">
+        {% csrf_token %}<
+        <h1> Registration Form   </h1>
+
+        {{form.as_p}}
+
+
+    <input type ="Submit">
+    </form>
+    {% if messages %}
+       {%for message in messages %}
+        
+         <span {% if message.tags %}   class ="{{message.tags}}"  {% endif %}>
+            {{message}}</span>
+
+        {% endfor %}
+
+    {% endif %}
+   </body>
+</center>
+</html>
+
+
+
+
+{% comment %}  this is another method but it static(we use span tag)
+
+{% if message.tags  %}   {{message.tags}}   {% endif %} {% endcomment %}
+
+
+
+
+
+
+
+{% comment %} 
+
+
+
+<html><head>
+    <title> HOme</title>
+
+    <style>
+
+        .success{
+            color : green;
+            background-color: ;
+        }
+    </style>
+    
+   </head>
+
+    <body>
+    <center>
+    <form action = " "  method = "POST">
+        {% csrf_token %}<
+        <h1> Registration Form   </h1>
+
+        {{form.as_p}}
+
+
+    <input type ="Submit">
+    </form>
+    {% if messages %}
+       {%for message in messages %}
+        
+         <span {% if message.tags %}   class ="{{message.tags}}"  {% endif %}>
+            {{message}}</span>
+
+        {% endfor %}
+
+    {% endif %}
+   </body>
+</center>
+</html>
+
+ {% endcomment %}
